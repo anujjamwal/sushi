@@ -1,12 +1,13 @@
-from sushi.tools import application, expose, parameter
+from lib.sushi.tools import application, expose, parameter, HttpMethod, ParamType
 
 
-@application
+@application()
 class Greeter(object):
 
-    @expose(path="/greet", method="GET")
-    @parameter(name="name", method="query")
+    @expose(path="/greet", method=HttpMethod.GET)
+    @parameter(name="name", method=ParamType.QUERY)
     def greet(self, name):
         return "Hello" + name
 
 
+Greeter().run()

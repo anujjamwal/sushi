@@ -6,7 +6,7 @@ Sushi is an application engine for python apps
 from sushi.tools import application, expose, parameter
 
 
-@application
+@application()
 class Greeter(object):
 
     @expose(path="/greet", method="GET")
